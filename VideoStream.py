@@ -44,9 +44,16 @@ def simpleFaceBoxing():
 def simpleFaceCancellationII():
     """This function cancel the face of people"""
     cap = cv.VideoCapture(0)
+    frameCtn = 10 
+    currentFrame = 0 
 
     while(cap.isOpened()):
         ret, frame = cap.read()
+        if currentFrame <= frameCtn:
+            print("Skipping\n")
+            currentFrame = currentFrame + 1 
+            continue
+        currentFrame = 0 
         faces, confidences = c.detect_face(frame)
         print("Score: " + str(confidences))
         for(x, y, w, h) in faces:
