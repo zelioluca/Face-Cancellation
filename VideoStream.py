@@ -44,7 +44,7 @@ def simpleFaceBoxing():
 def simpleFaceCancellationII():
     """This function cancel the face of people"""
     cap = cv.VideoCapture(0)
-    frameCtn = 10 
+    frameCtn = 1
     currentFrame = 0 
 
     while(cap.isOpened()):
